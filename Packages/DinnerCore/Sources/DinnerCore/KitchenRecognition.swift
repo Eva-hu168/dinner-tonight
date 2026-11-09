@@ -142,4 +142,20 @@ public enum KitchenRecognition {
         return KitchenFindings(found: found.filter { catalogue.ingredients[$0] != nil },
                                possible: possible.filter { catalogue.ingredients[$0] != nil })
     }
+
+    /// The answers the on-device language model may give: one name per pickable ingredient.
+    /// INVARIANT: pickable names are unique, so each answer maps back to exactly one id.
+    public static func modelChoices(in catalogue: Catalogue) -> [String] {
+        catalogue.pickable.map(\.name)
+    }
+
+    /// `seen` and `unsure` are names from `modelChoices`; anything else is dropped. Label text is read as for
+    /// the classifier, since a product name settles what the model may only guess.
+    public static func findings(seen: [String], unsure: [String], textLines: [String],
+                                catalogue: Catalogue) -> KitchenFindings {
+        let ids = Dictionary(catalogue.pickable.map { ($0.name, $0.id) }, uniquingKeysWith: { first, _ in first })
+        let found = Set(textLines.flatMap(ingredients(onLabelLine:))).union(seen.compactMap { ids[$0] })
+        return KitchenFindings(found: found.filter { catalogue.ingredients[$0] != nil },
+                               possible: Set(unsure.compactMap { ids[$0] }))
+    }
 }

@@ -14,8 +14,14 @@ enum KitchenScanner {
     static func scan(_ photo: Data, catalogue: Catalogue) async -> KitchenFindings? {
         await Task.detached(priority: .userInitiated) {
             guard let image = decode(photo) else { return nil }
-            let seen = attempt("classification") { try labels(in: image) }
             let read = attempt("text reading") { try textLines(in: image) }
+            #if compiler(>=6.4)
+            if #available(iOS 27, *), let sighting = await KitchenModelReader.look(at: image, catalogue: catalogue) {
+                return KitchenRecognition.findings(seen: sighting.seen, unsure: sighting.unsure,
+                                                   textLines: read ?? [], catalogue: catalogue)
+            }
+            #endif
+            let seen = attempt("classification") { try labels(in: image) }
             // One reader failing still leaves a useful list; only both failing is a failed scan.
             guard seen != nil || read != nil else { return nil }
             return KitchenRecognition.findings(labels: seen ?? [], textLines: read ?? [], catalogue: catalogue)

@@ -350,6 +350,20 @@ private func session(_ profile: Profile, _ request: TonightRequest = TonightRequ
         #expect(result.found == ["egg"])
         #expect(result.possible.isEmpty)
     }
+
+    @Test func everyModelChoiceNamesOneIngredient() {
+        let choices = KitchenRecognition.modelChoices(in: catalogue)
+        #expect(Set(choices).count == choices.count)
+        #expect(choices.count == catalogue.pickable.count)
+    }
+
+    @Test func modelSightingsAreTickedOrOfferedAndUnknownNamesDropped() {
+        let result = KitchenRecognition.findings(
+            seen: ["Eggplant", "Broccoli", "Salt", "Apples"], unsure: ["Feta", "Broccoli"],
+            textLines: ["Coconut Milk"], catalogue: catalogue)
+        #expect(result.found == ["eggplant", "broccoli", "coconut_milk"])
+        #expect(result.possible == ["feta"])
+    }
 }
 
 @Suite struct KitchenFreshnessChecks {

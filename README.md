@@ -31,10 +31,12 @@ The allergen tags in the ingredient table have been tested for consistency, not 
 
 ## Kitchen photos
 
-The Tonight screen's kitchen step takes a photo and recognises ingredients on the phone with Apple's Vision framework. No photo is saved or sent anywhere.
+The Tonight screen's kitchen step takes a photo and recognises ingredients on the phone. No photo is saved or sent anywhere.
 
-- `App/KitchenScanner.swift` runs image classification (whole photo and a 3×3 grid) and text reading.
+- On iOS 27 with Apple Intelligence on, `App/KitchenModelReader.swift` asks Apple's on-device language model which catalogue ingredients the photo shows. A schema limits its answers to catalogue names, split into clearly seen and unsure.
+- Elsewhere, or when the model fails, `App/KitchenScanner.swift` runs Vision image classification (whole photo and a 3×3 grid). Text on packaging is read with Vision in both cases.
 - `KitchenRecognition` in DinnerCore maps results to catalogue ingredients. Specific, confident sightings and package names are ticked; broad or unsure ones are offered unticked. The person always reviews the list.
 - With a kitchen known, dinners cookable without shopping rank first. A kitchen list is ignored after `AppData.kitchenFreshDays`.
 - Photos never affect allergen, diet or avoided-food filtering.
 - The classifier does not work in the Simulator (it fails to start or returns unrelated labels), so only text reading can be checked there. The camera needs a real iPhone.
+- The model path needs Xcode 27 (Swift 6.4); older Xcode compiles it out and builds the Vision path only.
