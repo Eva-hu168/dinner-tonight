@@ -1,0 +1,129 @@
+[
+  {
+    "file": "fridge-door-bottles.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Food_into_a_refrigerator_-_20111002.jpg",
+    "author": "Bretwa",
+    "license": "CC0",
+    "visible": [
+      "egg"
+    ],
+    "mustFind": []
+  },
+  {
+    "file": "fridge-produce-drawers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fruits_and_Vegetables_in_Refrigerator_-_50837631333.jpg",
+    "author": "Alabama Extension",
+    "license": "CC0",
+    "visible": [
+      "carrot",
+      "egg",
+      "eggplant",
+      "lemon",
+      "milk",
+      "spinach",
+      "zucchini"
+    ],
+    "mustFind": [
+      "milk",
+      "zucchini"
+    ]
+  },
+  {
+    "file": "fridge-open-at-night.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Open_refrigerator_with_food_at_night.jpg",
+    "author": "W.carter",
+    "license": "CC BY-SA 4.0",
+    "visible": [
+      "tomato"
+    ],
+    "mustFind": []
+  },
+  {
+    "file": "vegetable-bin-close.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegetables_in_Refrigerator_Bin.jpg",
+    "author": "Alabama Extension",
+    "license": "CC0",
+    "visible": [
+      "broccoli",
+      "eggplant",
+      "tomato",
+      "zucchini"
+    ],
+    "mustFind": [
+      "broccoli",
+      "eggplant",
+      "tomato",
+      "zucchini"
+    ]
+  },
+  {
+    "file": "vegetable-bin-wide.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegetables_in_Refrigerator_Bin_-_50838442242.jpg",
+    "author": "Alabama Extension",
+    "license": "CC0",
+    "visible": [
+      "broccoli",
+      "carrot",
+      "eggplant",
+      "lemon",
+      "tomato",
+      "zucchini"
+    ],
+    "mustFind": [
+      "broccoli",
+      "zucchini"
+    ]
+  },
+  {
+    "file": "french-door-fridge-showroom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Samsung_French_Door_Refrigerator_with_Food_Showcase_Design_(16676046120).jpg",
+    "author": "Maurizio Pesce from Milan, Italia",
+    "license": "CC BY 2.0",
+    "visible": [],
+    "mustFind": []
+  },
+  {
+    "file": "leftover-containers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Food_Safety_-_Cut_Waste_in_Refrigerators_(20200605-FSIS-LSC-0066).jpg",
+    "author": "USDAgov",
+    "license": "Public domain",
+    "visible": [],
+    "mustFind": []
+  },
+  {
+    "file": "leftovers-with-lemon.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Food_Safety_-_Cut_Waste_in_Refrigerators_(20200605-FSIS-LSC-0090).jpg",
+    "author": "USDAgov",
+    "license": "Public domain",
+    "visible": [
+      "lemon"
+    ],
+    "mustFind": [
+      "lemon"
+    ]
+  },
+  {
+    "file": "crisper-drawers-open.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Open_crisper_drawers.jpg",
+    "author": "Yoninah",
+    "license": "CC BY-SA 4.0",
+    "visible": [
+      "carrot"
+    ],
+    "mustFind": [
+      "carrot"
+    ]
+  },
+  {
+    "file": "red-peppers-counter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Red_bell_peppers_on_a_kitchen_counter.jpg",
+    "author": "Shixart1985",
+    "license": "CC BY 2.0",
+    "visible": [
+      "bell_pepper"
+    ],
+    "mustFind": [
+      "bell_pepper"
+    ]
+  }
+]

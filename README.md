@@ -15,6 +15,7 @@ An iPhone app that gets you from "what's for dinner?" to a decision in about thi
 
 ```sh
 swift test --package-path Packages/DinnerCore
+swift test --package-path Tests/KitchenPhotos   # real photos through the scanner, macOS
 xcodegen generate
 ```
 
